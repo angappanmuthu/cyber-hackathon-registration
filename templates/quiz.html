@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<script type="text/javascript">
+    window.onload=function(){
+        var auto = setTimeout(function(){ autoRefresh(); }, 100);
+
+        function submitform(){
+          document.forms["myForm"].submit();
+        }
+
+        function autoRefresh(){
+           clearTimeout(auto);
+           auto = setTimeout(function(){ submitform(); autoRefresh(); }, 10000);
+        }
+    }
+</script>
+
+<!--<p>QuizButton {{session['quiz_button']}}</p>-->
+<!--<p>{{session['quiz']['QUESTION']}}</p><br><br>-->
+<!--<p>Options:</p><br><br>-->
+<center><div class="countdown"></div></center>
+<form name="myForm" id="myForm" method="POST">
+<!--    <input type='radio' name="options" value="{{session['quiz']['OPTION_A']}}"><label>{{session['quiz']['OPTION_A']}}</label><br><br>-->
+<!--    <input type='radio' name="options" value="{{session['quiz']['OPTION_B']}}"><label>{{session['quiz']['OPTION_B']}}</label><br><br>-->
+<!--    <input type='radio' name="options" value="{{session['quiz']['OPTION_C']}}"><label>{{session['quiz']['OPTION_C']}}</label><br><br>-->
+<!--    <input type='radio' name="options" value="{{session['quiz']['OPTION_D']}}"><label>{{session['quiz']['OPTION_D']}}</label><br><br>-->
+<!--    <input type="submit" value="Next" />-->
+    	<div class="container">
+		<div class="row">
+		<div class="col-md-12">
+			<div class="nono">
+				<h1>Question</h1>
+
+			<p>
+				{{session['quiz']['QUESTION']}}
+			</p>
+
+			<div class="custom-control custom-radio">
+			<input type="radio" class="custom-control-input" id="a" name="options" value="{{session['quiz']['OPTION_A']}}" checked>
+			<label class="custom-control-label" for="a">{{session['quiz']['OPTION_A']}}</label>
+			</div>
+			<div class="custom-control custom-radio">
+			<input type="radio" class="custom-control-input" id="b" name="options" value="{{session['quiz']['OPTION_B']}}">
+			<label class="custom-control-label" for="b">{{session['quiz']['OPTION_B']}}</label>
+			</div>
+			<div class="custom-control custom-radio">
+			<input type="radio" class="custom-control-input" id="c" name="options" value="{{session['quiz']['OPTION_C']}}">
+			<label class="custom-control-label" for="c">{{session['quiz']['OPTION_C']}}</label>
+			</div>
+			<div class="custom-control custom-radio">
+			<input type="radio" class="custom-control-input" id="d" name="options" value="{{session['quiz']['OPTION_D']}}">
+			<label class="custom-control-label" for="d">{{session['quiz']['OPTION_D']}}</label>
+			</div>
+               <div class="buto">
+				<input type="submit" class="btn btn-primary btn-lg" value="Submit"/>
+			</div>
+
+			</div>
+		</div>
+		</div>
+	</div>
+</form>
+
+<style type="text/css">
+	body{
+		/*background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);*/
+		background-image: linear-gradient(to right,#27daf4,#3572f1);
+	}
+
+	.nono{
+		background-color: white;
+		border-radius: 20px;
+		height: auto;
+		padding: 10px;
+		margin-top: 60px;
+		margin-bottom: 60px;
+	}
+	h1{
+		font-size: 50px;
+		font-weight: bold;
+		margin-left: 30px;
+	}
+	p{
+		/*font-weight: bold;*/
+		font-size: 30px;
+		margin-top: 50px;
+		margin-left: 30px;
+		font-family: Nerko One;
+	}
+
+
+	label{
+		font-weight: bold;
+	}
+
+    .custom-control {
+        margin: 5px;
+        margin-left: 30px;
+    }
+	.buto{
+		margin-left: 30px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+</style>
+{% endblock %}

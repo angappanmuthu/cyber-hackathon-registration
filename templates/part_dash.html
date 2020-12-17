@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!--<h1>{{username}}</h1>-->
+<form method='POST'>
+<!--    <a href="/quiz" {{session['quiz_button']}} style="pointer-events:{{quiz_btn_status}};">Quiz</a><br><br>-->
+<!--    <lable>Choose Event</lable><br><br>-->
+<!--    <input type="radio" name="event" value="event1"><lable>Event 1</lable>-->
+<!--    <input type="radio" name="event" value="event2"><lable>Event 2</lable><br><br>-->
+<!--    <input type="submit" value="Submit" style="pointer-events:{{event_btn_status}};"/>-->
+
+    <div class="container">
+		<div class="row">
+		<div class="col-md-12">
+			<div class="nono">
+				<h1 align="center" style="font-weight: bold;">Welcome {{username}}</h1>
+
+				<div class="button1">
+					<a class="btn btn-primary btn-lg" style="color: white;" href="{{url_for('quiz')}}">Quiz go <i class="fa fa-fighter-jet" style="color: white;"></i></a>
+				</div>
+
+				<h3 style="font-weight: bold;margin-top: 70px; margin-left: 30px;">Choose Event</h3>
+
+				<!-- Default checked -->
+				<div class="row colmd-12" style="margin-top: 70px; margin-left: 100px;">
+
+<!--                    <div class="custom-control custom-radio col-md-6">-->
+<!--                      <input type="radio" class="custom-control-input"  id="_event" value="event1" name="event"  >-->
+<!--                      <label class="custom-control-label" for="_event" style="margin-left: 10px;margin-top: 10px;">Event 1</label>-->
+<!--                    </div>-->
+
+<!--                    <div class="custom-control custom-radio col-md-6">-->
+<!--                      <input type="radio" class="custom-control-input"  id="_event" value="event2" name="event"  >-->
+<!--                      <label class="custom-control-label" for="_event" style="margin-left: 10px;margin-top: 10px;">Event 2</label>-->
+<!--                    </div>-->
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="radio" name="event" value="evnet1" checked/><lable>Event 1</lable>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="radio" name="event" value="evnet2"/><lable>Event 2</lable>
+                        </div>
+                    </div>
+
+				</div>
+				<div id="my_centered_buttons">
+					<input value="Submit" type="submit" class="btn btn-primary btn-lg" style="width: 100px;"/>
+				</div>
+
+			</div>
+		</div>
+
+		</div>
+
+	</div>
+</form>
+
+<style type="text/css">
+	body{
+		background-image: linear-gradient(to right,#27daf4,#3572f1);
+	}
+
+	.nono{
+		background-color: white;
+		border-radius: 20px;
+		height: 550px;
+		padding: 10px;
+		margin-top: 60px;
+		margin-bottom: 50px;
+		padding:20px;
+	}
+
+
+	#my_centered_buttons{
+		margin-top: 20px;
+		display: flex;
+		justify-content: center;
+	}
+
+	.button1 {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 50px;
+		}
+
+
+	input[type="radio"]{
+		width: 20px;
+  		height: 20px;
+  		margin-left: 50px;
+  		/*border-radius: 50%;*/
+	}
+
+	input[type="submit"]{
+		border-radius: 5px;
+	}
+
+	lable{
+	    margin: 10px;
+	    padding-button: 2px;
+	    font-size: 25px;
+	    font-family: cursive;
+	}
+
+</style>
+
+{% endblock %}

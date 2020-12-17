@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!--<h1>Register</h1>-->
+<!--<form action="" method="POST" >-->
+<!--    <input type='text' name="name" placeholder="Name" /><br><br>-->
+<!--    <input type='text' name="contact_no" placeholder="contact_no"/><br><br>-->
+<!--    <input type='text' name="email" placeholder="email"/><br><br>-->
+<!--    <input type='text' name="degree" placeholder="degree"/><br><br>-->
+<!--    <input type='radio' name='dtype' /><lable>UG</lable>-->
+<!--    <input type='radio' name='dtype' /><lable>PG</lable><br><br>-->
+<!--    <input type='text' name='institute' placeholder="institute"/><br><br>-->
+<!--    <input type='submit' value="Register" /><br><br>-->
+<!--</form>-->
+
+<form action="" method="POST">
+<div class="container">
+
+                <form class="foro">
+                    <div class="row">
+                        <div class="col-md-6" >
+                            <h1 class="reg" align="center">Registration Form</h1>
+
+                <div class="input-container">
+                    <i class="fa fa-user fa-2x"></i>
+                    <input type="text" class="colo" name="name" placeholder="Name" required>
+                </div>
+
+                <div class="input-container">
+                     <i class="fa fa-address-book fa-2x"></i>
+                     <input type="number" class="colo" name="contact_no" placeholder="Contact Number" required>
+                </div>
+
+                <div class="input-container">
+                     <i class="fa fa-envelope fa-2x"></i>
+                     <input type="Email" class="colo" name="email" placeholder="Email" required>
+                </div>
+
+                <div class="input-container">
+                     <i class="fa fa-envelope fa-2x"></i>
+                     <input type="text" class="colo" name="degree" placeholder="Degree" required>
+                </div>
+
+                <div class="input-container">
+                    <i class="fa fa-graduation-cap  fa-2x"></i>
+                    <div class="form-check">
+                      <label class="form-check-label" style="margin-left: 30px;">
+                        <input type="radio" class="form-check-input" value="UG" name="dtype" checked>UG
+                      </label>
+                        <label class="form-check-label" style="margin-left: 30px;">
+                        <input type="radio" class="form-check-input" value="PG" name="dtype">PG
+                      </label>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <i class="fa fa-university  fa-2x"></i>
+                    <input type="text" name="institute" class="colo" placeholder="Institution Name" required>
+                </div>
+                <div class="input-container">
+                    <input type="checkbox" name="term" checked> <span>I agree to the terms &<br> Conditions</span>
+                </div>
+
+                <div class="input-container">
+                    <button type="submit" class="btn btn-lg btn-info">Register</button>
+                </div>
+                        </div>
+
+                    <div class="col-md-6" >
+                        <img src="{{design_image}}" alt="Girl in a jacket" width="400" height="500">
+            <h4>Alagappa Institute of Skill Development</h4>
+                    </div>
+                    </div>
+                </form>
+
+               
+      </div>
+    </div>
+  </div>
+
+            </div>
+
+</form>
+
+    <!-- </div> -->
+
+<style type="text/css">
+    body{
+        background: rgb(68,63,153);
+background: linear-gradient(90deg, rgba(68,63,153,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    }
+
+        .reg{
+        font-weight: bold;
+    }
+    .container{
+
+        margin-top: 15px;
+        margin-bottom: 15px;
+
+        background-color: white;
+        padding-left: 50px;
+        border-radius: 20px;
+
+    }
+
+.colo {
+  border: none;
+  border-bottom: 2px solid grey;
+  outline: none;
+  width: 300px;
+}
+input:focus{
+    border-bottom: 3px solid black;
+}
+.input-container{
+    padding: 20px;
+}
+
+.btn{
+    /*border-radius: 30px;*/
+}
+
+h1{
+    margin-top: 15px;
+    margin-left: 300px;
+    margin-bottom: 30px;
+}
+
+    }
+</style>
+
+{% endblock %}

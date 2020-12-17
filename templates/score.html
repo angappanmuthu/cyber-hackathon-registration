@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p>{{score}}</p>
+
+<div class="container">
+    <div class="row">
+        <div class="four col-md-3">
+            <div class="counter-box colored"> <i class="fa fa-thumbs-o-up"></i> <span class="counter">2147</span>
+                <p>Happy Customers</p>
+            </div>
+        </div>
+        <div class="four col-md-3">
+            <div class="counter-box a"> <i class="fa fa-group"></i> <span class="counter">3275</span>
+                <p>Registered Members</p>
+            </div>
+        </div>
+        <div class="four col-md-3">
+            <div class="counter-box b"> <i class="fa fa-shopping-cart"></i> <span class="counter">{{score}}</span>
+                <p>Obtained Score</p>
+            </div>
+        </div>
+        <div class="four col-md-3">
+            <div class="counter-box c"> <i class="fa fa-user"></i> <span class="counter">1563</span>
+                <p>Saved Trees</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <center>
+        <a href="{{url_for('part_dash')}}" class="btn btn-success">Next Event</a>
+    </center>
+</div>
+
+	<style type="text/css">
+		.container {
+    margin-top: 250px
+}
+
+body{
+	/*background-color: #005eff;*/
+	background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+.counter-box {
+    display: block;
+    background: #f6f6f6;
+    padding: 40px 20px 37px;
+    text-align: center
+    /*border-radius:50px;*/
+}
+
+.counter-box p {
+    margin: 5px 0 0;
+    padding: 0;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.counter-box i {
+    font-size: 60px;
+    margin: 0 0 15px;
+    color: white;
+    /*border-radius: 50px;*/
+}
+
+.counter {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    line-height: 28px
+}
+
+.counter-box.colored {
+    background: #3acf87
+}
+.counter-box.a{
+	background-color: #fc4f0a;
+}
+.counter-box.b{
+	background-color: #14c3de;
+}
+.counter-box.c{
+	background-color: #f5f122;
+}
+.counter-box.colored p,
+.counter-box.colored i,
+.counter-box.colored .counter {
+    color: #fff
+}
+
+</style>
+
+{% endblock %}
