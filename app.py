@@ -46,12 +46,12 @@ def register():
         print(response)
         send_mail_to(email, user_id)
         if response['status'] == True:
-            flash('Registration Success!')
+            #flash('Registration Success!')
             return render_template(url_for('reg_success'))
         else:
-            flash('Registration Fai!')
+            #lash('Registration Fai!')
             return render_template('register.html')
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0")
+    app.run(debug=True)
