@@ -47,7 +47,7 @@ def register():
         if response['status'] == True:
             return redirect(url_for('reg_success'))
         elif response['status'] == False:
-            return "<script>alert('Registration Failed!\n(Reason : Mobile Number alreay exist)');window.location.href = '/register';</script>"
+            return "<script>alert('Registration Failed! (Reason : Mobile Number alreay exist)');window.location.href = '/register';</script>"
 
 
 if __name__ == '__main__':
