@@ -47,7 +47,7 @@ def register():
         send_mail_to(email, user_id)
         if response['status'] == True:
             #flash('Registration Success!')
-            return render_template(url_for('reg_success'))
+            return "<script>alert('Successfully Registered');</script>"
         else:
             #lash('Registration Fai!')
             return render_template('register.html')
