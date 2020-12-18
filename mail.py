@@ -3,8 +3,8 @@ import ssl
 
 port = 587  # For starttls
 smtp_server = "smtp.gmail.com"
-sender_email = "mayanangappan@gmail.com"
-password = 'ptnpdaucxkibqiwp'
+sender_email = "aisdcyber2020@gmail.com"
+password = 'bkytowgiymvbjrcd'
 
 
 def send_mail_to(receiver_email, user_id):
