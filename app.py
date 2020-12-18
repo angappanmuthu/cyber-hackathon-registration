@@ -1,9 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, current_app, session
+from flask import Flask, render_template, request, redirect, url_for, flash, current_app, session, jsonify, json
 import random
 import os
 import requests
 from mail import send_mail_to
-import json
 
 app = Flask(__name__)
 app.secret_key = 'aluaisdcyberhack'
@@ -18,6 +17,7 @@ def home():
     session['quiz_button'] = 'auto'
     session['submit_button'] = 'auto'
     return render_template('home.html')
+
 
 @app.route('/reg_success')
 def reg_success():
@@ -41,16 +41,12 @@ def register():
         data = {"name": name, "userid": user_id, "contact_no": contact_no,
                 "email": email, "degree": degree, "dtype": dtype, "institute": institute}
         res = requests.post(url, data=data)
-        text = res.text
-        response = json.loads(text)
+        response = res.json()
         print(response)
         send_mail_to(email, user_id)
         if response['status'] == True:
-            #flash('Registration Success!')
-            return "<script>alert('Successfully Registered');</script>"
-        else:
-            #lash('Registration Fai!')
-            return render_template('register.html')
+            return "<script>alert('Successfully Registered!');window.location.href = '/';</script>"
+        return render_template('register.html')
 
 
 if __name__ == '__main__':
