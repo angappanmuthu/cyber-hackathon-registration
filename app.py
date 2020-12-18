@@ -46,7 +46,7 @@ def register():
         send_mail_to(email, user_id)
         if response['status'] == True:
             return redirect(url_for('reg_success'))
-        return render_template('register.html')
+        return "<script>alert('Successfully Registered!');window.location.href = '/register';</script>"
 
 
 if __name__ == '__main__':
