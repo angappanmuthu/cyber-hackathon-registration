@@ -8,7 +8,7 @@ password = 'bkytowgiymvbjrcd'
 
 
 def send_mail_to(receiver_email, user_id):
-    subject = "CyberHack Task From EIC Hub, Algappa University"
+    subject = "CyberHackathonT20 From EIC Hub, Algappa University"
     body = "Your User ID is " + \
         str(user_id)+",Password is your mobile number that your have registered.\n\nGood Luck"
     msg = f'Subject:{subject}\n\n{body}'
